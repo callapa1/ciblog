@@ -1,7 +1,7 @@
 <?php 
     class Posts extends CI_Controller{
         public function index(){
-            $data['title'] = 'Patest Posts';
+            $data['title'] = 'Latest Posts';
 
             $this->load->view('templates/header');
             $this->load->view('posts/index', $data);
