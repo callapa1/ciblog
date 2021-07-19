@@ -5,7 +5,7 @@
 </div>
 
 <hr>
+<a class="btn btn-info" href="edit/<?= $post['slug']; ?>">Edit</a>
 <?= form_open('/posts/delete/'.$post['id']); ?>
-    <input type="submit" value="Delete" class="btn btn-danger">
-    </input>
+    <input type="submit" value="Delete" class="btn btn-danger" />
 </form>
