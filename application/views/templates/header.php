@@ -13,19 +13,22 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                <a class="nav-link active" href="<?= base_url(); ?>">Home
-                </a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>about">About</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" href="<?= base_url(); ?>posts">Posts
-                </a>
-                </li>
-            </ul>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                    <a class="nav-link active" href="<?= base_url(); ?>">Home
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url(); ?>about">About</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="<?= base_url(); ?>posts">Posts
+                    </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="<?= base_url(); ?>posts/create">Create Post</a></li>
+                </ul>
             </div>
         </div>
     </nav>
