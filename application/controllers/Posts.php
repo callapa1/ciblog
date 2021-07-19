@@ -1,4 +1,4 @@
-<?php 
+<?php
     class Posts extends CI_Controller{
         public function index(){
             $data['title'] = 'Latest Posts';
@@ -15,7 +15,7 @@
             if(empty($data['post'])){
                 show_404();
             }
-            
+
             $data['title'] = $data['post']['title'];
 
             $this->load->view('templates/header');
@@ -35,20 +35,7 @@
                 $this->load->view('templates/footer');
             } else {
                 $this->post_model->create_post();
-                $this->load->view('posts/success');
+                redirect('posts');
             }
-
-        }
-
-        public function create_post(){
-            $slug = url_title($this->input->post('title'));
-
-            $data = array(
-                'title' => $this->input->post('title'),
-                'slug' => $slug,
-                'body' => $this->input->post('body')
-            );
-
-            return $this->db->insert('posts', $data);
         }
     }
