@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
         <label>Body</label>
-        <textarea class="form-control" name="body" placeholder="Add Body"><?= $post['body']; ?>
+        <textarea id="editor1" class="form-control" name="body" placeholder="Add Body"><?= $post['body']; ?>
         </textarea>
     </div>
 

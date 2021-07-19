@@ -3,6 +3,7 @@
         <title>ciBLOG</title>
         <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css" />
         <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css" />
+        <script src="http://cdn.ckeditor.com/4.5.11/standard/ckeditor.js"></script>
     </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
