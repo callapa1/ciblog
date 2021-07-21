@@ -1,5 +1,9 @@
 <?php
 class Categories extends CI_Controller{
+    public function index(){
+        
+    }
+
     public function create(){
         $data['title'] = 'Create Category';
 
