@@ -6,7 +6,7 @@ class Categories extends CI_Controller{
         $this->form_validation->set_rules('name', 'Name', 'required');
         if($this->form_validation->run() === FALSE){
             $this->load->view('templates/header');
-            $this->load->view('templates/create');
+            $this->load->view('categories/create', $data);
             $this->load->view('templates/footer');
         } else {
             $this->category_model->create_category();
