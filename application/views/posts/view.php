@@ -14,6 +14,9 @@
 
 <hr>
 <h3>Add Comment</h3>
+
+<?= validation_errors(); ?>
+
 <?= form_open('comments/create'.$post['id']); ?>
     <div class="form-group">
         <label>Name</label>
