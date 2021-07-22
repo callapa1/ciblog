@@ -17,18 +17,18 @@
 
 <?= validation_errors(); ?>
 
-<?= form_open('comments/create'.$post['id']); ?>
+<?= form_open('comments/create/'.$post['id']); ?>
     <div class="form-group">
         <label>Name</label>
         <input type="text" name="name" class="form-control" />
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="email" name="name" class="form-control" />
+        <input type="text" name="email" class="form-control" />
     </div>
     <div class="form-group">
         <label>Body</label>
-        <textarea type="text" name="name" class="form-control"></textarea>
+        <textarea name="body" class="form-control"></textarea>
         <input type="hidden" name="slug" value="<?= $post['slug']; ?>" />
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
