@@ -15,7 +15,9 @@
 <h3>Comments</h3>
 <?php if($comments): ?>
     <?php foreach($comments as $comment): ?>
-        <h5><?= $comment['body']; ?> [by <strong><?= $comment['name']; ?></strong>]</h5>
+        <div class="bg-light">    
+            <h5><?= $comment['body']; ?> [by <strong><?= $comment['name']; ?></strong>]</h5>
+        </div>
     <?php endforeach; ?>
 <?php else: ?>
     <p>No comments to display</p>
