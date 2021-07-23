@@ -14,7 +14,15 @@ class Users extends CI_Controller{
             $this->load->view('users/register', $data);
             $this->load->view('templates/footer');
         } else {
-            die('Continue');
+            // Encrypt password
+            $enc_password = md5($this->input->post('password'));
+
+            $this->user_model->register($enc_password);
+
+            // Set flash message
+            $this->sesison->set_flashdata('user_register', 'You are now registered and can log in.');
+
+            redirect('posts');
         }
     }
 }
