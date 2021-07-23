@@ -12,7 +12,14 @@ class Users extends CI_Controller{
                 'is_unique' => 'This %s already exists.'
             )
         );
-        $this->form_validation->set_rules('email', 'Email','required');
+        $this->form_validation->set_rules(
+            'email',
+            'Email',
+            'required|is_unique[users.email]',
+            array(
+                'is_unique' => 'This %s is already taken.'
+            )
+        );
         $this->form_validation->set_rules('password', 'Password','required|min_length[6]');
         $this->form_validation->set_rules('password2', 'Confirm Password','min_length[6]|matches[password]');
         
