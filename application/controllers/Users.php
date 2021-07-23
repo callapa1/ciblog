@@ -20,7 +20,7 @@ class Users extends CI_Controller{
             $this->user_model->register($enc_password);
 
             // Set flash message
-            $this->sesison->set_flashdata('user_register', 'You are now registered and can log in.');
+            $this->session->set_flashdata('user_register', 'You are now registered and can log in.');
 
             redirect('posts');
         }
