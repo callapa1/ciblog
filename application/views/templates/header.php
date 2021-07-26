@@ -33,9 +33,14 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="btn btn-primary"><a href="<?= base_url(); ?>posts/create">Create Post</a></li>
-                    <li class="btn btn-primary"><a href="<?= base_url(); ?>users/login">Login</a></li>
-                    <li class="btn btn-primary"><a href="<?= base_url(); ?>users/register">Register</a></li>
-                    <li class="btn btn-primary"><a href="<?= base_url(); ?>categories/create">Create Category</a></li>
+                    <?php if(!$this->session->userdata('logged_in')): ?>
+                        <li class="btn btn-primary"><a href="<?= base_url(); ?>users/login">Login</a></li>
+                        <li class="btn btn-primary"><a href="<?= base_url(); ?>users/register">Register</a></li>
+                    <?php endif; ?>
+                        <li class="btn btn-primary"><a href="<?= base_url(); ?>categories/create">Create Category</a></li>
+                    <?php if($this->session->userdata('logged_in')): ?>
+                        <li class="btn btn-primary"><a href="<?= base_url(); ?>users/logout">Logout</a></li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -69,4 +74,8 @@
 
         <?php if($this->session->flashdata('user_loggedin')): ?>
             <?= '<p class="alert alert-success">' .$this->session->flashdata('user_loggedin') .'</p>'; ?>
+        <?php endif; ?>
+
+        <?php if($this->session->flashdata('user_loggedout')): ?>
+            <?= '<p class="alert alert-info">' .$this->session->flashdata('user_loggedout') .'</p>'; ?>
         <?php endif; ?>
