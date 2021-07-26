@@ -54,7 +54,7 @@ class Users extends CI_Controller{
         
         if($this->form_validation->run() === FALSE){
             $this->load->view('templates/header');
-            $this->load->view('users/register', $data);
+            $this->load->view('users/login', $data);
             $this->load->view('templates/footer');
         } else {
             // Get username
