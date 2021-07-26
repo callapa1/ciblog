@@ -87,6 +87,11 @@
 
             $data['post'] = $this->post_model->get_posts($slug);
 
+            // Check user
+
+            if($this->session->userdata('user_id') != $data['post']['user_id']){
+                redirect('posts');
+            }
             $data['categories'] = $this->post_model->get_categories();
 
             if(empty($data['post'])){
