@@ -44,8 +44,7 @@ class Users extends CI_Controller{
     // Log in
     public function login(){
         $data['title'] = 'Sign in';
-
-        $this->form_validation->set_rules('name', 'Name','required');
+        
         $this->form_validation->set_rules(
             'username',
             'Username',
