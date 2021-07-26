@@ -62,3 +62,7 @@
         <?php if($this->session->flashdata('category_created')): ?>
             <?= '<p class="alert alert-success">' .$this->session->flashdata('user_registered') .'</p>'; ?>
         <?php endif; ?>
+
+        <?php if($this->session->flashdata('login_failed')): ?>
+            <?= '<p class="alert alert-danger">' .$this->session->flashdata('login_failed') .'</p>'; ?>
+        <?php endif; ?>
