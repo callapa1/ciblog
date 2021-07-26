@@ -60,13 +60,19 @@ class Users extends CI_Controller{
             // Get username
             $username = $this->input->post('username');
             // Get and encrypt password
-            $password = md5($this->input->post('username'));
+            $password = md5($this->input->post('password'));
 
             $user_id = $this->user_model->login($username, $password);
 
             if($user_id){
                 // Create session
-                die('SUCCESS');
+                $user_data = array(
+                    'user_id' => $user_id,
+                    'username' => $username,
+                    'logged_in' => TRUE
+                );
+
+                $this->session->set_userdata($user_data);
                 // Set message
                 $this->session->set_flashdata('user_loggedin', 'You are now logged in.');
             } else {
