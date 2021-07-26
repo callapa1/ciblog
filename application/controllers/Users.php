@@ -58,10 +58,22 @@ class Users extends CI_Controller{
             $this->load->view('users/register', $data);
             $this->load->view('templates/footer');
         } else {
-            
-            // Set flash message
-            $this->session->set_flashdata('user_register', 'You are now logged in.');
+            // Get username
+            $username = $this->input->post('username');
+            // Get and encrypt password
+            $password = md5($this->input->post('username'));
 
+            $user_id = $this->user_model->login($username, $password);
+
+            if($user_id){
+                // Create session
+                die('SUCCESS');
+                // Set message
+                $this->session->set_flashdata('user_loggedin', 'You are now logged in.');
+            } else {
+                // Set message
+                $this->session->set_flashdata('login_failed', 'Login is invalid.');
+            }
             redirect('posts');
         }
     }

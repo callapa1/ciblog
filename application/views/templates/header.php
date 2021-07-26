@@ -33,7 +33,8 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="btn btn-primary"><a href="<?= base_url(); ?>posts/create">Create Post</a></li>
-                    <li class="btn btn-primary"><a href="<?= base_url(); ?>users/register">Create User</a></li>
+                    <li class="btn btn-primary"><a href="<?= base_url(); ?>users/login">Login</a></li>
+                    <li class="btn btn-primary"><a href="<?= base_url(); ?>users/register">Register</a></li>
                     <li class="btn btn-primary"><a href="<?= base_url(); ?>categories/create">Create Category</a></li>
                 </ul>
             </div>
