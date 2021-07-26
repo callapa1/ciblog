@@ -1,5 +1,6 @@
 <?php
 class Users extends CI_Controller{
+    // Register
     public function register(){
         $data['title'] = 'Sign up';
 
@@ -35,6 +36,31 @@ class Users extends CI_Controller{
 
             // Set flash message
             $this->session->set_flashdata('user_register', 'You are now registered and can log in.');
+
+            redirect('posts');
+        }
+    }
+
+    // Log in
+    public function login(){
+        $data['title'] = 'Sign in';
+
+        $this->form_validation->set_rules('name', 'Name','required');
+        $this->form_validation->set_rules(
+            'username',
+            'Username',
+            'required|min_length[3]'
+        );
+        $this->form_validation->set_rules('password', 'Password','required|min_length[6]');
+        
+        if($this->form_validation->run() === FALSE){
+            $this->load->view('templates/header');
+            $this->load->view('users/register', $data);
+            $this->load->view('templates/footer');
+        } else {
+            
+            // Set flash message
+            $this->session->set_flashdata('user_register', 'You are now logged in.');
 
             redirect('posts');
         }
