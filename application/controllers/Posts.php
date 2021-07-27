@@ -6,6 +6,7 @@
             $config['total_rows'] = $this->db->count_all('posts');
             $config['per_page'] = 3;
             $config['uri_segment'] = 3;
+            $config['attributes'] =  array('class' => 'pagination-link');
 
             // Init pagination
             $this->pagination->initialize($config);
