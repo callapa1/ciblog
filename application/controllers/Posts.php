@@ -11,7 +11,7 @@
             $this->pagination->initialize($config);
 
             $data['title'] = 'Latest Posts';
-            $data['posts'] = $this->post_model->get_posts();
+            $data['posts'] = $this->post_model->get_posts(FALSE, $config['per_page'], $offset);
 
             $this->load->view('templates/header');
             $this->load->view('posts/index', $data);
