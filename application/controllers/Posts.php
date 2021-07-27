@@ -2,7 +2,7 @@
     class Posts extends CI_Controller{
         public function index($offset = 0){
             // Pagination config
-            $config['base_url'] = base_ulr() . 'posts/index/';
+            $config['base_url'] = base_url() . 'posts/index/';
             $config['total_rows'] = $this->db->count_all('posts');
             $config['per_page'] = 3;
             $config['uri_segment'] = 3;
